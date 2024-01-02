@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Activities Evaluation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: darkblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        main {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .activity {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .activity h2 {
+            color: #333;
+        }
+
+        .activity p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rating label {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .rating input {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 15px;
+            background-color: darkblue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Club Activities Evaluation
+    </header>
+
+    <main>
+        <div class="activity">
+            <h2>cookkhas-sinegastro</h2>
+            <p>The dishes in my film will be given to the audience. Location: Kadir has fener hall. Time: January 1 at 16.00.</p>
+            <div class="rating">
+                <label for="rating1">Rating 1 to 10:</label>
+                <input type="number" id="rating1" name="rating1" min="1" max="10">
+            </div>
+            <textarea placeholder="Provide your feedback"></textarea>
+        </div>
+
+        <div class="activity">
+            <h2>Club Activity 2</h2>
+            <p>Description of the activity...</p>
+            <div class="rating">
+                <label for="rating2">Rating:</label>
+                <input type="number" id="rating2" name="rating2" min="1" max="5">
+            </div>
+            <textarea placeholder="Provide your feedback"></textarea>
+        </div>
+
+        <button onclick="submitFeedback()">Submit Feedback</button>
+    </main>
+
+    <script>
+        function submitFeedback() {
+            alert('Feedback submitted successfully!');
+        }
+    </script>
+   
+
+</body>
+</html>

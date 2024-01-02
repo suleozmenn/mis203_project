@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .feedback-container {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: darkblue;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+      <header>
+        <img src="kadir_logo.png" alt="Kadir Has Üniversitesi Logo" style="width:300px;height:100px;" >
+        <h1>Kadir Has University Clubs</h1>
+        
+<header>
+        <a href="file:///C:/Users/PC/OneDrive/Masa%C3%BCst%C3%BC/m%C4%B1s203webpage/foto/home.html#home" id="homeButton">
+            <button>
+                <span class="icon">&#8962;</span>
+                Home Page
+            </button>
+        </a>
+    </header>
+<div class="feedback-container">
+  <h2>Student Feedback</h2>
+  <form id="feedbackForm">
+    <label for="request">Requests</label>
+    <textarea id="request" placeholder="Enter your request"></textarea>
+
+    <label for="expectation">Suggestions</label>
+    <textarea id="expectation" placeholder="Enter your suggestions"></textarea>
+
+    <label for="complaint">Complaints</label>
+    <textarea id="complaint" placeholder="Enter your complaints"></textarea>
+
+    <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+  </form>
+</div>
+
+<script>
+  
+  function submitFeedback() {
+    var request = document.getElementById('request').value;
+    var expectation = document.getElementById('expectation').value;
+    var complaint = document.getElementById('complaint').value;
+
+    console.log('Requests:', request);
+    console.log('Expectations:', expectation);
+    console.log('Complaint:', complaint);
+
+    alert('Feedback submitted successfully!');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: darkblue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        th:hover, td:hover {
+            background-color: #f0f0f0;
+        }
+
+        .day-number {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .event {
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .event:nth-child(2n) {
+            background-color: #e74c3c;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #333;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+       Event Calendar
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+    </table>
+
+    <div class="popup" id="popup">
+        <div class="popup-content" id="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p id="event-description"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarBody = document.getElementById('calendar-body');
+
+            function getDaysInMonth(month, year) {
+                return new Date(year, month + 1, 0).getDate();
+            }
+
+            function openPopup(eventDescription) {
+                var popup = document.getElementById('popup');
+                var popupContent = document.getElementById('popup-content');
+                var eventDescriptionElement = document.getElementById('event-description');
+
+                eventDescriptionElement.textContent = eventDescription;
+
+                popup.style.display = 'block';
+            }
+
+            function closePopup() {
+                var popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+
+            function generateCalendar(month, year) {
+                calendarBody.innerHTML = '';
+
+                var daysInMonth = getDaysInMonth(month, year);
+                var dayCount = 1;
+
+                var dailyEvents = {
+                    1: [{ title: 'cookkhas-sinegastro', description: 'The dishes in my film will be given to the audience. Location: Kadir has fener hall. Time: January 1 at 16.00' }, { title: 'Event 2', description: 'Detailed description for Event 2.' }],
+                    2: [{ title: 'Event 3', description: 'Detailed description for Event 3.' }, { title: 'Event 4', description: 'Detailed description for Event 4.' }],
+                };
+
+                for (var i = 0; i < 6; i++) {
+                    var row = document.createElement('tr');
+
+                    for (var j = 0; j < 7; j++) {
+                        var cell = document.createElement('td');
+
+                        if (i === 0 && j < new Date(year, month, 1).getDay()) {
+                            cell.textContent = '';
+                        } else if (dayCount > daysInMonth) {
+                            cell.textContent = '';
+                        } else {
+                            var dayNumber = document.createElement('div');
+                            dayNumber.className = 'day-number';
+                            dayNumber.textContent = dayCount;
+
+                            cell.appendChild(dayNumber);
+
+                            var eventsForDay = dailyEvents[dayCount];
+                            if (eventsForDay) {
+                                eventsForDay.forEach(function(event, index) {
+                                    var eventElement = document.createElement('div');
+                                    eventElement.className = 'event';
+                                    eventElement.textContent = event.title;
+                                    eventElement.style.backgroundColor = index % 2 === 0 ? '#3498db' : '#e74c3c';
+                                    eventElement.addEventListener('click', function() {
+                                        openPopup(event.description);
+                                    });
+                                    cell.appendChild(eventElement);
+                                });
+                            }
+
+                            dayCount++;
+                        }
+
+                        row.appendChild(cell);
+                    }
+
+                    calendarBody.appendChild(row);
+                }
+            }
+
+            generateCalendar(0, new Date().getFullYear()); // Başlangıç olarak Ocak ayını göster
+
+        });
+    </script>
+
+</body>
+</html>

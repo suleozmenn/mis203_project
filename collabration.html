@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadir Has University Clubs Partnership</title>
+    <style>
+        body {
+            font-family: "arial", Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #001f3f; /* Dark Blue */
+            color: #fff; /* White text */
+            text-align: center;
+        }
+
+        header {
+            background-color: #001f3f; /* Dark Blue */
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        footer {
+            padding: 10px;
+            background-color: #001f3f; /* Dark Blue */
+            color: white;
+        }
+
+        .event {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .event img {
+            width: 35%; /* Görsel boyutu düzenlendi */
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .event .overlay {
+            position: relative;
+            text-align: left;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah arka plan */
+            color: #fff;
+            font-size: 3.8em; /* Yazı boyutu artırıldı */
+            border-radius: 8px;
+            margin-top: -50px; /* Görselin üst kısmına taşınması */
+            z-index: 1;
+        }
+
+        .collaboration-box {
+            background-color: dark blue
+            border-radius: 8px;
+            padding: 5px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .collaboration-box input,
+        .collaboration-box textarea {
+            width: 150%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .collaboration-box button {
+            background-color: white
+            color: dark blue;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Header Section -->
+<header>
+    <h1>Kadir Has University Clubs Partnership</h1>
+</header>
+
+<!-- İşbirlikleri -->
+<section>
+    <div class="event">
+        <h2>KHAS Clubs Association and Student Council - Winter Festival</h2>
+        <p>The magnificent Winter Festival organized by KHAS Clubs Association and Student Council in cooperation with IBB Culture!...</p>
+        <img src="kis_festivali.jpg" alt="Kış Festivali">
+    </div>
+
+    <div class="event">
+        <h2>5 December 2023 - Polisan Home Cosmetics Sponsorship Collaboration</h2>
+        <p>A few photos from the event organized in collaboration with Polisan Home Cosmetics and KHAS Architecture Club on December 5, 2023...</p>
+        <img src="polisan1.jpg" alt="Polisan Home İş Birliği">
+        <img src="polisan2.jpg" alt="Polisan Home İş Birliği">
+        <img src="polisan3.jpg" alt="Polisan Home İş Birliği">
+    </div>
+
+    <div class="event">
+        <h2>CooKhas and SineGastro Event Collaboration</h2>
+        <p>A delicious event accompanied by Sinegastro!</p>
+        <img src="sinegastro1.jpg" alt="CooKhas ve SineGastro İş Birliği">
+         <img src="sinegastro2.jpg" alt="CooKhas ve SineGastro İş Birliği">
+    </div>
+
+    <div class="event">
+        <h2>Haschain and KuCoin Collaboration - Blockchain Decoding</h2>
+        <p>The Blockchain Decoding event organized in cooperation with Haschain and KuCoin will be held with the participation of KuCoin Research Expert Şimal Hazal Sarıözen!</p>
+        <img src="blockchain.jpg" alt="Haschain ve KuCoin İş Birliği - Blockchain Decoding">
+    </div>
+  
+</section>
+
+<!-- İş Birliği Kutusu -->
+<div class="collaboration-box">
+    <h2>Come on, if you want to increase your club activity and expand your social network, send an offer!</h2>
+    <form>
+        <label for="socialMedia">Your Club's Social Media Accounts:</label>
+        <input type="text" id="socialMedia" name="socialMedia" required>
+
+        <label for="email">Your Club's E-mail Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Contact number of your club:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="collaborationEvent">Event or Sponsorship with which you would like to cooperate:</label>
+        <input type="text" id="collaborationEvent" name="collaborationEvent" required>
+
+        <label for="targetClub">Club or Company with which you would like to establish cooperation:</label>
+        <input type="text" id="targetClub" name="targetClub" required>
+
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 Kadir Has University. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
